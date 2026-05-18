@@ -24,26 +24,17 @@
 
 * { margin:0; padding:0; box-sizing:border-box; }
 body { font-family:'Jost',sans-serif; background:var(--cream); color:var(--brown); min-height:100vh; }
-
 .app { display:flex; min-height:100vh; }
 
-/* SIDEBAR */
 .sidebar {
-  width:220px; min-width:220px;
-  background:var(--brown);
-  display:flex; flex-direction:column;
-  padding:28px 0;
+  width:220px; min-width:220px; background:var(--brown);
+  display:flex; flex-direction:column; padding:28px 0;
   position:sticky; top:0; height:100vh;
 }
 .sidebar-logo { padding:0 24px 28px; border-bottom:1px solid rgba(255,255,255,0.1); margin-bottom:20px; }
 .sidebar-logo h1 { font-family:'Cormorant Garamond',serif; font-size:20px; color:var(--cream); font-weight:600; }
 .sidebar-logo p { font-size:10px; color:var(--blush); letter-spacing:0.15em; text-transform:uppercase; margin-top:4px; }
-.nav-item {
-  display:flex; align-items:center; gap:12px;
-  padding:12px 24px; cursor:pointer; transition:all 0.2s;
-  color:rgba(250,247,242,0.6); font-size:13px;
-  border-left:3px solid transparent;
-}
+.nav-item { display:flex; align-items:center; gap:12px; padding:12px 24px; cursor:pointer; transition:all 0.2s; color:rgba(250,247,242,0.6); font-size:13px; border-left:3px solid transparent; }
 .nav-item:hover { color:var(--cream); background:rgba(255,255,255,0.05); }
 .nav-item.active { color:var(--cream); background:rgba(255,255,255,0.08); border-left-color:var(--gold); }
 .nav-icon { font-size:16px; width:20px; text-align:center; }
@@ -51,15 +42,13 @@ body { font-family:'Jost',sans-serif; background:var(--cream); color:var(--brown
 .stat-mini { display:flex; justify-content:space-between; margin-bottom:8px; font-size:11px; color:rgba(250,247,242,0.5); }
 .stat-mini span:last-child { color:var(--blush); font-weight:500; }
 
-/* MAIN */
 .main { flex:1; overflow-y:auto; }
 .view { display:none; padding:36px 40px; }
 .view.active { display:block; }
 .page-header { margin-bottom:32px; display:flex; align-items:flex-end; justify-content:space-between; }
 .page-header h2 { font-family:'Cormorant Garamond',serif; font-size:28px; font-weight:400; font-style:italic; }
-.page-header p { font-size:12px; color:var(--brown-mid); margin-top:4px; letter-spacing:0.04em; }
+.page-header p { font-size:12px; color:var(--brown-mid); margin-top:4px; }
 
-/* BUTTONS */
 .btn { padding:10px 20px; border-radius:8px; font-family:'Jost',sans-serif; font-size:12px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer; border:none; transition:all 0.2s; }
 .btn-primary { background:var(--brown); color:var(--cream); }
 .btn-primary:hover { opacity:0.85; }
@@ -70,10 +59,8 @@ body { font-family:'Jost',sans-serif; background:var(--cream); color:var(--brown
 .btn-sm { padding:6px 14px; font-size:11px; }
 .btn-danger { background:#FFEEEE; color:#CC4444; border:1px solid #FFCCCC; }
 .btn-danger:hover { background:#CC4444; color:white; border-color:#CC4444; }
-.btn-sage { background:var(--sage); color:white; }
 .btn:disabled { opacity:0.5; cursor:not-allowed; }
 
-/* DASHBOARD */
 .stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:32px; }
 .stat-card { background:var(--warm); border:1px solid var(--border); border-radius:14px; padding:20px; box-shadow:var(--shadow); }
 .stat-card .label { font-size:10px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--brown-light); margin-bottom:8px; }
@@ -81,8 +68,7 @@ body { font-family:'Jost',sans-serif; background:var(--cream); color:var(--brown
 .stat-card .sub { font-size:11px; color:var(--brown-light); margin-top:6px; }
 .stat-card .accent { color:var(--gold); }
 
-/* PRODUCT GRID */
-.filters { display:flex; gap:10px; margin-bottom:24px; flex-wrap:wrap; align-items:center; }
+.filters { display:flex; gap:10px; margin-bottom:24px; flex-wrap:wrap; }
 .filter-input { background:var(--warm); border:1px solid var(--border); border-radius:8px; padding:9px 14px; font-family:'Jost',sans-serif; font-size:13px; color:var(--brown); outline:none; transition:border-color 0.2s; }
 .filter-input:focus { border-color:var(--gold); }
 .filter-input[type="text"] { min-width:200px; }
@@ -90,9 +76,9 @@ body { font-family:'Jost',sans-serif; background:var(--cream); color:var(--brown
 .products-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:20px; }
 .product-card { background:var(--warm); border:1px solid var(--border); border-radius:16px; overflow:hidden; box-shadow:var(--shadow); transition:transform 0.2s,box-shadow 0.2s; cursor:pointer; }
 .product-card:hover { transform:translateY(-2px); box-shadow:0 8px 30px rgba(61,43,31,0.12); }
-.card-top { padding:12px 16px; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; }
 .card-image { width:100%; height:160px; object-fit:cover; display:block; }
 .card-image-placeholder { width:100%; height:100px; background:linear-gradient(135deg,var(--blush)22,var(--gold)11); display:flex; align-items:center; justify-content:center; font-size:32px; }
+.card-top { padding:12px 16px; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; }
 .card-niche { font-size:10px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; padding:3px 10px; border-radius:20px; }
 .status-badge { font-size:10px; font-weight:500; padding:3px 10px; border-radius:20px; }
 .card-body { padding:14px 16px; }
@@ -108,7 +94,6 @@ body { font-family:'Jost',sans-serif; background:var(--cream); color:var(--brown
 .empty-state h3 { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:400; font-style:italic; margin-bottom:8px; color:var(--brown-mid); }
 .empty-state p { font-size:13px; margin-bottom:20px; }
 
-/* MODAL */
 .modal-overlay { display:none; position:fixed; inset:0; background:rgba(61,43,31,0.5); z-index:100; align-items:center; justify-content:center; padding:20px; }
 .modal-overlay.open { display:flex; }
 .modal { background:var(--warm); border-radius:20px; width:100%; max-width:700px; max-height:92vh; overflow-y:auto; box-shadow:0 20px 60px rgba(61,43,31,0.25); }
@@ -128,25 +113,18 @@ body { font-family:'Jost',sans-serif; background:var(--cream); color:var(--brown
 textarea.form-input { resize:vertical; min-height:80px; }
 .section-label { font-size:10px; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); margin:18px 0 10px; padding-bottom:6px; border-bottom:1px solid var(--border); }
 
-/* IMAGE UPLOAD */
-.image-upload-zone {
-  border:2px dashed var(--border); border-radius:12px;
-  padding:24px; text-align:center; cursor:pointer;
-  transition:all 0.2s; background:var(--cream);
-}
+.image-upload-zone { border:2px dashed var(--border); border-radius:12px; padding:24px; text-align:center; cursor:pointer; transition:all 0.2s; background:var(--cream); }
 .image-upload-zone:hover { border-color:var(--gold); background:rgba(201,169,110,0.04); }
 .image-upload-zone.dragover { border-color:var(--gold); background:rgba(201,169,110,0.08); }
 .image-upload-zone p { font-size:13px; color:var(--brown-mid); margin-top:8px; }
 .image-upload-zone small { font-size:11px; color:var(--brown-light); }
 .image-preview { width:100%; max-height:200px; object-fit:cover; border-radius:10px; margin-top:10px; display:none; }
 
-/* AI SECTION */
 .ai-section { background:linear-gradient(135deg,rgba(201,169,110,0.08),rgba(232,196,184,0.12)); border:1px solid var(--blush); border-radius:12px; padding:16px 18px; margin-bottom:16px; }
 .ai-section h4 { font-family:'Cormorant Garamond',serif; font-size:16px; font-weight:600; margin-bottom:4px; }
 .ai-section p { font-size:12px; color:var(--brown-mid); margin-bottom:12px; }
 .ai-loading { display:none; font-size:12px; color:var(--brown-mid); padding:8px 0; font-style:italic; }
 
-/* CALENDAR */
 .calendar-header { display:flex; align-items:center; gap:16px; margin-bottom:24px; }
 .cal-nav { display:flex; gap:6px; }
 .cal-btn { width:32px; height:32px; border-radius:8px; border:1px solid var(--border); background:var(--warm); cursor:pointer; font-size:14px; display:flex; align-items:center; justify-content:center; transition:all 0.15s; }
@@ -161,30 +139,31 @@ textarea.form-input { resize:vertical; min-height:80px; }
 .cal-day.today .cal-date { color:var(--gold); font-weight:600; }
 .cal-pin { border-radius:4px; padding:2px 6px; font-size:9px; color:var(--brown); margin-bottom:2px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; cursor:pointer; }
 
-/* SETTINGS */
 .settings-section { background:var(--warm); border:1px solid var(--border); border-radius:16px; padding:24px; margin-bottom:20px; }
 .settings-section h3 { font-family:'Cormorant Garamond',serif; font-size:18px; font-weight:600; margin-bottom:16px; }
 .tag-list { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px; }
-.tag-item { display:flex; align-items:center; gap:8px; padding:6px 12px; border-radius:20px; border:1px solid var(--border); background:var(--cream); font-size:12px; }
+.tag-item { display:flex; align-items:center; gap:8px; padding:6px 12px; border-radius:20px; border:1px solid var(--border); font-size:12px; }
 .tag-delete { cursor:pointer; color:var(--brown-light); font-size:14px; transition:color 0.15s; }
 .tag-delete:hover { color:#CC4444; }
 .add-tag-row { display:flex; gap:8px; align-items:center; }
 
-/* VARIANTS */
 .variant-list { display:flex; flex-direction:column; gap:8px; }
 .variant-item { background:var(--cream); border:1px solid var(--border); border-radius:8px; padding:10px 14px; display:flex; gap:10px; align-items:flex-start; }
 .v-num { width:22px; height:22px; min-width:22px; background:linear-gradient(135deg,var(--blush),var(--rose)); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:600; }
 .v-angle { font-size:9px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); margin-bottom:3px; }
 .v-title { font-size:13px; line-height:1.4; }
 
-/* TOAST */
 .toast { position:fixed; bottom:24px; right:24px; background:var(--brown); color:var(--cream); padding:12px 20px; border-radius:10px; font-size:13px; z-index:999; opacity:0; transform:translateY(10px); transition:all 0.3s; pointer-events:none; }
 .toast.show { opacity:1; transform:translateY(0); }
 
-/* LOADING SCREEN */
 .loading-screen { position:fixed; inset:0; background:var(--cream); display:flex; align-items:center; justify-content:center; z-index:200; flex-direction:column; gap:16px; }
 .loading-screen h2 { font-family:'Cormorant Garamond',serif; font-size:28px; font-style:italic; }
 .loading-screen p { font-size:13px; color:var(--brown-mid); }
+
+/* AI Results */
+.result-block { background:var(--cream); border:1px solid var(--border); border-radius:10px; padding:16px; margin-bottom:12px; }
+.result-block h4 { font-size:10px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
+.result-block p, .result-block div { font-size:13px; line-height:1.7; color:var(--brown); white-space:pre-wrap; }
 
 ::-webkit-scrollbar { width:4px; }
 ::-webkit-scrollbar-thumb { background:var(--border); border-radius:4px; }
@@ -205,11 +184,11 @@ textarea.form-input { resize:vertical; min-height:80px; }
       <p>Pin Manager</p>
     </div>
     <nav>
-      <div class="nav-item active" onclick="showView('dashboard')"><span class="nav-icon">🏠</span> Dashboard</div>
-      <div class="nav-item" onclick="showView('products')"><span class="nav-icon">📋</span> My Pins</div>
-      <div class="nav-item" onclick="showView('calendar')"><span class="nav-icon">📅</span> Calendar</div>
-      <div class="nav-item" onclick="showView('generator')"><span class="nav-icon">✨</span> AI Generator</div>
-      <div class="nav-item" onclick="showView('settings')"><span class="nav-icon">⚙️</span> Settings</div>
+      <div class="nav-item active" onclick="showView('dashboard',this)"><span class="nav-icon">🏠</span> Dashboard</div>
+      <div class="nav-item" onclick="showView('products',this)"><span class="nav-icon">📋</span> My Pins</div>
+      <div class="nav-item" onclick="showView('calendar',this)"><span class="nav-icon">📅</span> Calendar</div>
+      <div class="nav-item" onclick="showView('generator',this)"><span class="nav-icon">✨</span> AI Generator</div>
+      <div class="nav-item" onclick="showView('settings',this)"><span class="nav-icon">⚙️</span> Settings</div>
     </nav>
     <div class="sidebar-stats">
       <div class="stat-mini"><span>Total Pins</span><span id="sb-total">0</span></div>
@@ -232,8 +211,8 @@ textarea.form-input { resize:vertical; min-height:80px; }
         <div class="stat-card"><div class="label">Total Clicks</div><div class="value" id="dash-clicks">0</div><div class="sub">tracked outbound</div></div>
         <div class="stat-card"><div class="label">Total Saves</div><div class="value" id="dash-saves">0</div><div class="sub">by Pinterest users</div></div>
       </div>
-      <div><h3 style="font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;margin-bottom:16px">Recent pins</h3>
-      <div class="products-grid" id="recent-grid"></div></div>
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;margin-bottom:16px">Recent pins</h3>
+      <div class="products-grid" id="recent-grid"></div>
     </div>
 
     <!-- MY PINS -->
@@ -244,12 +223,8 @@ textarea.form-input { resize:vertical; min-height:80px; }
       </div>
       <div class="filters">
         <input type="text" class="filter-input" id="search-input" placeholder="🔍  Search…" oninput="renderProducts()">
-        <select class="filter-input" id="filter-niche" onchange="renderProducts()">
-          <option value="">All niches</option>
-        </select>
-        <select class="filter-input" id="filter-status" onchange="renderProducts()">
-          <option value="">All statuses</option>
-        </select>
+        <select class="filter-input" id="filter-niche" onchange="renderProducts()"><option value="">All niches</option></select>
+        <select class="filter-input" id="filter-status" onchange="renderProducts()"><option value="">All statuses</option></select>
       </div>
       <div class="products-grid" id="products-grid"></div>
     </div>
@@ -269,35 +244,27 @@ textarea.form-input { resize:vertical; min-height:80px; }
 
     <!-- AI GENERATOR -->
     <div class="view" id="view-generator">
-      <div class="page-header"><div><h2>AI Pin Generator</h2><p>Generate & save directly to your library</p></div></div>
-      <div style="max-width:640px">
+      <div class="page-header"><div><h2>AI Pin Generator</h2><p>Powered by Gemini — Generate & save to your library</p></div></div>
+      <div style="max-width:680px">
         <div style="background:var(--warm);border:1px solid var(--border);border-radius:16px;padding:28px;margin-bottom:20px">
           <div class="form-grid">
             <div class="form-group"><label class="form-label">Product Name *</label><input class="form-input" id="gen-name" placeholder="e.g. Silk Pillowcase Pack of 2"></div>
             <div class="form-group"><label class="form-label">Category *</label><select class="form-input" id="gen-cat"><option value="">Select…</option></select></div>
             <div class="form-group"><label class="form-label">Price (AUD)</label><input class="form-input" id="gen-price" placeholder="$42"></div>
             <div class="form-group"><label class="form-label">Amazon Link</label><input class="form-input" id="gen-link" placeholder="amzn.to/xxxxx"></div>
-            <div class="form-group full"><label class="form-label">Key Benefits</label><textarea class="form-input" id="gen-benefits" placeholder="e.g. reduces frizz, anti-aging…"></textarea></div>
+            <div class="form-group full"><label class="form-label">Key Benefits (optional)</label><textarea class="form-input" id="gen-benefits" placeholder="e.g. reduces frizz, anti-aging, 6 colours…"></textarea></div>
           </div>
-          <div style="display:flex;gap:10px;margin-top:12px">
-            <button class="btn btn-gold" id="gen-btn" onclick="runGenerator()" style="flex:1">✨ Generate Content</button>
-          </div>
-          <div class="ai-loading" id="gen-loading">Generating your Pinterest content…</div>
+          <button class="btn btn-gold" id="gen-btn" onclick="runGenerator()" style="width:100%;margin-top:12px">✨ Generate Content</button>
+          <div class="ai-loading" id="gen-loading">🌿 Gemini is crafting your Pinterest content…</div>
         </div>
+
         <div id="gen-results" style="display:none">
-          <div style="background:var(--warm);border:1px solid var(--border);border-radius:16px;padding:24px;margin-bottom:16px">
-            <div class="section-label">Best Title</div>
-            <div id="gen-out-title" style="font-family:'Cormorant Garamond',serif;font-size:18px;margin-bottom:16px"></div>
-            <div class="section-label">Description</div>
-            <div id="gen-out-desc" style="font-size:13px;line-height:1.7;white-space:pre-wrap;margin-bottom:16px"></div>
-            <div class="section-label">Hashtags</div>
-            <div id="gen-out-hash" style="font-size:12px;color:var(--brown-mid);margin-bottom:16px"></div>
-            <div class="section-label">5 Title Variants</div>
-            <div id="gen-out-variants" class="variant-list" style="margin-bottom:16px"></div>
-            <div class="section-label">Canva Visual Tips</div>
-            <div id="gen-out-visual" style="font-size:13px;line-height:1.7;white-space:pre-wrap"></div>
-          </div>
-          <button class="btn btn-primary" style="width:100%" onclick="saveGeneratedPin()">💾 Save to My Pins</button>
+          <div class="result-block"><h4>📌 Best Title</h4><div id="gen-out-title"></div></div>
+          <div class="result-block"><h4>📝 Description</h4><div id="gen-out-desc"></div></div>
+          <div class="result-block"><h4>#️⃣ Hashtags</h4><div id="gen-out-hash"></div></div>
+          <div class="result-block"><h4>🔁 5 Pin Variants</h4><div id="gen-out-variants" class="variant-list"></div></div>
+          <div class="result-block"><h4>🎨 Canva Visual Tips</h4><div id="gen-out-visual"></div></div>
+          <button class="btn btn-primary" style="width:100%;margin-top:4px" onclick="saveGeneratedPin()">💾 Save to My Pins</button>
         </div>
       </div>
     </div>
@@ -305,7 +272,6 @@ textarea.form-input { resize:vertical; min-height:80px; }
     <!-- SETTINGS -->
     <div class="view" id="view-settings">
       <div class="page-header"><div><h2>Settings</h2><p>Customise your niches and statuses</p></div></div>
-
       <div class="settings-section">
         <h3>🌿 Niches</h3>
         <div class="tag-list" id="niches-list"></div>
@@ -316,7 +282,6 @@ textarea.form-input { resize:vertical; min-height:80px; }
           <button class="btn btn-gold btn-sm" onclick="addNiche()">Add</button>
         </div>
       </div>
-
       <div class="settings-section">
         <h3>🏷️ Statuses</h3>
         <div class="tag-list" id="statuses-list"></div>
@@ -339,16 +304,15 @@ textarea.form-input { resize:vertical; min-height:80px; }
       <button class="modal-close" onclick="closeModal()">✕</button>
     </div>
     <div class="modal-body">
-
       <div class="ai-section">
         <h4>✨ AI Quick Fill</h4>
-        <p>Let AI generate all content for this product</p>
+        <p>Let Gemini generate all content for this product</p>
         <div style="display:flex;gap:8px">
           <input class="form-input" id="modal-ai-name" placeholder="Product name…" style="flex:1">
           <select class="form-input" id="modal-ai-cat" style="width:170px"><option value="">Category…</option></select>
           <button class="btn btn-gold btn-sm" onclick="quickAIFill()">Generate</button>
         </div>
-        <div class="ai-loading" id="modal-ai-loading">Generating…</div>
+        <div class="ai-loading" id="modal-ai-loading">🌿 Generating…</div>
       </div>
 
       <div class="form-grid">
@@ -373,9 +337,9 @@ textarea.form-input { resize:vertical; min-height:80px; }
       <div class="section-label">Pinterest Content</div>
       <div class="form-grid">
         <div class="form-group full"><label class="form-label">Best Title</label><input class="form-input" id="f-title" placeholder="SEO-optimised title…"></div>
-        <div class="form-group full"><label class="form-label">Description</label><textarea class="form-input" id="f-description" style="min-height:100px" placeholder="Pinterest description…"></textarea></div>
+        <div class="form-group full"><label class="form-label">Description</label><textarea class="form-input" id="f-description" style="min-height:100px"></textarea></div>
         <div class="form-group full"><label class="form-label">Hashtags</label><input class="form-input" id="f-hashtags" placeholder="#guasha #skincareroutine…"></div>
-        <div class="form-group full"><label class="form-label">Canva Visual Tips</label><textarea class="form-input" id="f-visual" placeholder="Visual tips, colour palette…"></textarea></div>
+        <div class="form-group full"><label class="form-label">Canva Visual Tips</label><textarea class="form-input" id="f-visual"></textarea></div>
       </div>
 
       <div class="section-label">5 Pin Variants</div>
@@ -395,7 +359,7 @@ textarea.form-input { resize:vertical; min-height:80px; }
         <div class="form-group"><label class="form-label">Conversions</label><input class="form-input" id="f-conversions" type="number" placeholder="0"></div>
       </div>
 
-      <div class="form-group" style="margin-top:16px"><label class="form-label">Notes</label><textarea class="form-input" id="f-notes" placeholder="Personal notes…"></textarea></div>
+      <div class="form-group" style="margin-top:16px"><label class="form-label">Notes</label><textarea class="form-input" id="f-notes"></textarea></div>
     </div>
     <div class="modal-footer">
       <button class="btn btn-danger btn-sm" id="delete-btn" onclick="deletePin()" style="display:none">Delete</button>
@@ -408,141 +372,122 @@ textarea.form-input { resize:vertical; min-height:80px; }
 <div class="toast" id="toast"></div>
 
 <script>
-// ── SUPABASE ──
 const SUPABASE_URL = 'https://mlcnnplenwzqzylufksz.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1sY25ucGxlbnd6cXp5bHVma3N6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkwNzM0NDcsImV4cCI6MjA5NDY0OTQ0N30.SPCNdiGDMstZd8-PBlaL37v-UvNncoUltRQMfKresD8';
+const WORKER_URL = 'https://gg-ai-proxy.alizee-ferrandis.workers.dev';
+
 const { createClient } = supabase;
 const db = createClient(SUPABASE_URL, SUPABASE_KEY);
 
-let pins = [], niches = [], statuses = [];
-let editingId = null, generatedData = null, pendingImageFile = null;
-let calYear = new Date().getFullYear(), calMonth = new Date().getMonth();
+let pins=[], niches=[], statuses=[];
+let editingId=null, generatedData=null, pendingImageFile=null;
+let calYear=new Date().getFullYear(), calMonth=new Date().getMonth();
 
-// ── INIT ──
 async function init() {
   await Promise.all([loadNiches(), loadStatuses()]);
   await loadPins();
   populateSelects();
   renderDashboard();
-  document.getElementById('loading-screen').style.display = 'none';
-  document.getElementById('app').style.display = 'flex';
+  document.getElementById('loading-screen').style.display='none';
+  document.getElementById('app').style.display='flex';
 }
 
-// ── DATA LOADERS ──
 async function loadPins() {
-  const { data } = await db.from('pins').select('*').order('created_at', { ascending: false });
-  pins = data || [];
+  const { data } = await db.from('pins').select('*').order('created_at',{ascending:false});
+  pins = data||[];
   updateSidebar();
 }
 
 async function loadNiches() {
   const { data } = await db.from('niches').select('*').order('created_at');
-  niches = data || [];
+  niches = data||[];
 }
 
 async function loadStatuses() {
   const { data } = await db.from('statuses').select('*').order('created_at');
-  statuses = data || [];
+  statuses = data||[];
 }
 
-// ── POPULATE SELECTS ──
 function populateSelects() {
-  const nicheSelects = ['f-niche', 'filter-niche', 'gen-cat', 'modal-ai-cat'];
-  nicheSelects.forEach(id => {
+  ['f-niche','filter-niche','gen-cat','modal-ai-cat'].forEach(id => {
     const el = document.getElementById(id);
     if (!el) return;
-    const isFilter = id === 'filter-niche';
+    const isFilter = id==='filter-niche';
     el.innerHTML = isFilter ? '<option value="">All niches</option>' : '<option value="">Select…</option>';
     niches.forEach(n => {
-      const opt = document.createElement('option');
-      opt.value = n.name;
-      opt.textContent = (n.emoji ? n.emoji + ' ' : '') + n.name;
-      el.appendChild(opt);
+      const o = document.createElement('option');
+      o.value = n.name;
+      o.textContent = (n.emoji?n.emoji+' ':'')+n.name;
+      el.appendChild(o);
     });
   });
-
-  const statusSelects = ['f-status', 'filter-status'];
-  statusSelects.forEach(id => {
+  ['f-status','filter-status'].forEach(id => {
     const el = document.getElementById(id);
     if (!el) return;
-    const isFilter = id === 'filter-status';
-    el.innerHTML = isFilter ? '<option value="">All statuses</option>' : '<option value="">Select…</option>';
+    el.innerHTML = id==='filter-status' ? '<option value="">All statuses</option>' : '<option value="">Select…</option>';
     statuses.forEach(s => {
-      const opt = document.createElement('option');
-      opt.value = s.name;
-      opt.textContent = s.name;
-      el.appendChild(opt);
+      const o = document.createElement('option');
+      o.value = s.name; o.textContent = s.name;
+      el.appendChild(o);
     });
   });
-
   renderNicheSettings();
   renderStatusSettings();
 }
 
-// ── NAVIGATION ──
-function showView(name) {
-  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-  document.getElementById('view-' + name).classList.add('active');
-  event?.currentTarget?.classList.add('active');
-  if (name === 'dashboard') renderDashboard();
-  if (name === 'products') renderProducts();
-  if (name === 'calendar') renderCalendar();
+function showView(name, el) {
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
+  document.getElementById('view-'+name).classList.add('active');
+  el?.classList.add('active');
+  if(name==='dashboard') renderDashboard();
+  if(name==='products') renderProducts();
+  if(name==='calendar') renderCalendar();
 }
 
-// ── SIDEBAR ──
 function updateSidebar() {
-  document.getElementById('sb-total').textContent = pins.length;
-  document.getElementById('sb-published').textContent = pins.filter(p => p.status === 'Published').length;
-  document.getElementById('sb-todo').textContent = pins.filter(p => p.status === 'To Create').length;
+  document.getElementById('sb-total').textContent=pins.length;
+  document.getElementById('sb-published').textContent=pins.filter(p=>p.status==='Published').length;
+  document.getElementById('sb-todo').textContent=pins.filter(p=>p.status==='To Create').length;
 }
 
-// ── DASHBOARD ──
 function renderDashboard() {
-  document.getElementById('dash-total').textContent = pins.length;
-  document.getElementById('dash-published').textContent = pins.filter(p => p.status === 'Published').length;
-  document.getElementById('dash-clicks').textContent = pins.reduce((s, p) => s + (p.clicks || 0), 0);
-  document.getElementById('dash-saves').textContent = pins.reduce((s, p) => s + (p.saves || 0), 0);
-  const recent = pins.slice(0, 3);
-  document.getElementById('recent-grid').innerHTML = recent.length
-    ? recent.map(renderCard).join('')
-    : '<p style="color:var(--brown-light);font-size:13px">No pins yet — create your first one!</p>';
+  document.getElementById('dash-total').textContent=pins.length;
+  document.getElementById('dash-published').textContent=pins.filter(p=>p.status==='Published').length;
+  document.getElementById('dash-clicks').textContent=pins.reduce((s,p)=>s+(p.clicks||0),0);
+  document.getElementById('dash-saves').textContent=pins.reduce((s,p)=>s+(p.saves||0),0);
+  const recent=pins.slice(0,3);
+  document.getElementById('recent-grid').innerHTML=recent.length ? recent.map(renderCard).join('') : '<p style="color:var(--brown-light);font-size:13px">No pins yet — create your first one!</p>';
 }
 
-// ── PRODUCTS ──
 function renderProducts() {
-  const search = document.getElementById('search-input').value.toLowerCase();
-  const niche = document.getElementById('filter-niche').value;
-  const status = document.getElementById('filter-status').value;
-  const filtered = pins.filter(p => {
-    const ms = !search || (p.name||'').toLowerCase().includes(search) || (p.title||'').toLowerCase().includes(search);
-    const mn = !niche || p.niche === niche;
-    const mst = !status || p.status === status;
-    return ms && mn && mst;
+  const search=document.getElementById('search-input').value.toLowerCase();
+  const niche=document.getElementById('filter-niche').value;
+  const status=document.getElementById('filter-status').value;
+  const filtered=pins.filter(p=>{
+    const ms=!search||(p.name||'').toLowerCase().includes(search)||(p.title||'').toLowerCase().includes(search);
+    return ms&&(!niche||p.niche===niche)&&(!status||p.status===status);
   });
-  const grid = document.getElementById('products-grid');
-  grid.innerHTML = filtered.length
-    ? filtered.map(renderCard).join('')
+  const grid=document.getElementById('products-grid');
+  grid.innerHTML=filtered.length ? filtered.map(renderCard).join('')
     : `<div class="empty-state"><div class="emoji">🌿</div><h3>No pins found</h3><p>Try adjusting filters or create a new pin</p><button class="btn btn-primary" onclick="openNewPin()">+ New Pin</button></div>`;
 }
 
 function renderCard(p) {
-  const niche = niches.find(n => n.name === p.niche);
-  const status = statuses.find(s => s.name === p.status);
-  const nicheBg = niche?.color || '#F5F5F5';
-  const statusBg = status?.color || '#F5F5F5';
-  const imageHtml = p.image_url
+  const niche=niches.find(n=>n.name===p.niche);
+  const status=statuses.find(s=>s.name===p.status);
+  const img=p.image_url
     ? `<img src="${p.image_url}" class="card-image" onerror="this.style.display='none'">`
-    : `<div class="card-image-placeholder">${niche?.emoji || '📌'}</div>`;
+    : `<div class="card-image-placeholder">${niche?.emoji||'📌'}</div>`;
   return `<div class="product-card" onclick="openEdit('${p.id}')">
-    ${imageHtml}
+    ${img}
     <div class="card-top">
-      <span class="card-niche" style="background:${nicheBg}88;color:var(--brown)">${niche?.emoji||''} ${p.niche||'—'}</span>
-      <span class="status-badge" style="background:${statusBg};color:var(--brown)">${p.status||'—'}</span>
+      <span class="card-niche" style="background:${niche?.color||'#F5F5F5'}88">${niche?.emoji||''} ${p.niche||'—'}</span>
+      <span class="status-badge" style="background:${status?.color||'#F5F5F5'}">${p.status||'—'}</span>
     </div>
     <div class="card-body">
       <div class="card-title">${p.name}</div>
-      <div class="card-price">${p.price||'—'}${p.commission?' · '+p.commission+' commission':''}</div>
+      <div class="card-price">${p.price||'—'}${p.commission?' · '+p.commission:''}</div>
       <div class="card-desc">${p.title||p.description||'No content yet'}</div>
     </div>
     <div class="card-footer">
@@ -555,319 +500,184 @@ function renderCard(p) {
   </div>`;
 }
 
-// ── IMAGE HANDLING ──
-function handleDragOver(e) { e.preventDefault(); document.getElementById('upload-zone').classList.add('dragover'); }
-function handleDrop(e) {
-  e.preventDefault();
-  document.getElementById('upload-zone').classList.remove('dragover');
-  const file = e.dataTransfer.files[0];
-  if (file) previewImage(file);
-}
-function handleImageSelect(e) {
-  const file = e.target.files[0];
-  if (file) previewImage(file);
-}
-function previewImage(file) {
-  if (file.size > 5 * 1024 * 1024) { showToast('Image must be under 5MB ⚠️'); return; }
-  pendingImageFile = file;
-  const reader = new FileReader();
-  reader.onload = e => {
-    const img = document.getElementById('image-preview');
-    img.src = e.target.result;
-    img.style.display = 'block';
-  };
-  reader.readAsDataURL(file);
+function handleDragOver(e){e.preventDefault();document.getElementById('upload-zone').classList.add('dragover');}
+function handleDrop(e){e.preventDefault();document.getElementById('upload-zone').classList.remove('dragover');const f=e.dataTransfer.files[0];if(f)previewImage(f);}
+function handleImageSelect(e){const f=e.target.files[0];if(f)previewImage(f);}
+function previewImage(file){
+  if(file.size>5*1024*1024){showToast('Image must be under 5MB ⚠️');return;}
+  pendingImageFile=file;
+  const r=new FileReader();
+  r.onload=e=>{const img=document.getElementById('image-preview');img.src=e.target.result;img.style.display='block';};
+  r.readAsDataURL(file);
 }
 
-async function uploadImage(file, pinId) {
-  const ext = file.name.split('.').pop();
-  const path = `${pinId}.${ext}`;
-  const { error } = await db.storage.from('pin-images').upload(path, file, { upsert: true });
-  if (error) { console.error(error); return null; }
-  const { data } = db.storage.from('pin-images').getPublicUrl(path);
+async function uploadImage(file,pinId){
+  const ext=file.name.split('.').pop();
+  const path=`${pinId}.${ext}`;
+  const {error}=await db.storage.from('pin-images').upload(path,file,{upsert:true});
+  if(error){console.error(error);return null;}
+  const {data}=db.storage.from('pin-images').getPublicUrl(path);
   return data.publicUrl;
 }
 
-// ── MODAL ──
-function openNewPin() {
-  editingId = null;
-  document.getElementById('modal-title').textContent = 'New Pin';
-  document.getElementById('delete-btn').style.display = 'none';
-  clearForm();
-  document.getElementById('pin-modal').classList.add('open');
+function openNewPin(){editingId=null;document.getElementById('modal-title').textContent='New Pin';document.getElementById('delete-btn').style.display='none';clearForm();document.getElementById('pin-modal').classList.add('open');}
+function openEdit(id){
+  const pin=pins.find(p=>p.id===id);if(!pin)return;
+  editingId=id;document.getElementById('modal-title').textContent='Edit Pin';document.getElementById('delete-btn').style.display='inline-flex';
+  fillForm(pin);document.getElementById('pin-modal').classList.add('open');
+}
+function closeModal(){document.getElementById('pin-modal').classList.remove('open');editingId=null;pendingImageFile=null;}
+
+function clearForm(){
+  ['f-name','f-price','f-commission','f-link','f-title','f-description','f-hashtags','f-visual','f-notes','f-impressions','f-clicks','f-saves','f-conversions','modal-ai-name'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
+  document.getElementById('f-niche').value='';document.getElementById('f-status').value='';document.getElementById('f-date').value='';
+  document.querySelectorAll('.variant-inp').forEach(i=>i.value='');
+  const img=document.getElementById('image-preview');img.style.display='none';img.src='';
+  pendingImageFile=null;
 }
 
-function openEdit(id) {
-  const pin = pins.find(p => p.id === id);
-  if (!pin) return;
-  editingId = id;
-  document.getElementById('modal-title').textContent = 'Edit Pin';
-  document.getElementById('delete-btn').style.display = 'inline-flex';
-  fillForm(pin);
-  document.getElementById('pin-modal').classList.add('open');
+function fillForm(p){
+  document.getElementById('f-name').value=p.name||'';
+  document.getElementById('f-niche').value=p.niche||'';
+  document.getElementById('f-price').value=p.price||'';
+  document.getElementById('f-commission').value=p.commission||'';
+  document.getElementById('f-link').value=p.link||'';
+  document.getElementById('f-status').value=p.status||'';
+  document.getElementById('f-date').value=p.publish_date||'';
+  document.getElementById('f-title').value=p.title||'';
+  document.getElementById('f-description').value=p.description||'';
+  document.getElementById('f-hashtags').value=p.hashtags||'';
+  document.getElementById('f-visual').value=p.visual_tips||'';
+  document.getElementById('f-notes').value=p.notes||'';
+  document.getElementById('f-impressions').value=p.impressions||'';
+  document.getElementById('f-clicks').value=p.clicks||'';
+  document.getElementById('f-saves').value=p.saves||'';
+  document.getElementById('f-conversions').value=p.conversions||'';
+  const inputs=document.querySelectorAll('.variant-inp');
+  (p.variants||[]).forEach((v,i)=>{if(inputs[i])inputs[i].value=v.title||'';});
+  if(p.image_url){const img=document.getElementById('image-preview');img.src=p.image_url;img.style.display='block';}
 }
 
-function closeModal() {
-  document.getElementById('pin-modal').classList.remove('open');
-  editingId = null;
-  pendingImageFile = null;
-}
-
-function clearForm() {
-  ['f-name','f-price','f-commission','f-link','f-title','f-description','f-hashtags','f-visual','f-notes','f-impressions','f-clicks','f-saves','f-conversions','modal-ai-name'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.value = '';
-  });
-  document.getElementById('f-niche').value = '';
-  document.getElementById('f-status').value = '';
-  document.getElementById('f-date').value = '';
-  document.querySelectorAll('.variant-inp').forEach(i => i.value = '');
-  document.getElementById('image-preview').style.display = 'none';
-  document.getElementById('image-preview').src = '';
-  pendingImageFile = null;
-}
-
-function fillForm(p) {
-  document.getElementById('f-name').value = p.name||'';
-  document.getElementById('f-niche').value = p.niche||'';
-  document.getElementById('f-price').value = p.price||'';
-  document.getElementById('f-commission').value = p.commission||'';
-  document.getElementById('f-link').value = p.link||'';
-  document.getElementById('f-status').value = p.status||'';
-  document.getElementById('f-date').value = p.publish_date||'';
-  document.getElementById('f-title').value = p.title||'';
-  document.getElementById('f-description').value = p.description||'';
-  document.getElementById('f-hashtags').value = p.hashtags||'';
-  document.getElementById('f-visual').value = p.visual_tips||'';
-  document.getElementById('f-notes').value = p.notes||'';
-  document.getElementById('f-impressions').value = p.impressions||'';
-  document.getElementById('f-clicks').value = p.clicks||'';
-  document.getElementById('f-saves').value = p.saves||'';
-  document.getElementById('f-conversions').value = p.conversions||'';
-  const inputs = document.querySelectorAll('.variant-inp');
-  (p.variants||[]).forEach((v,i) => { if (inputs[i]) inputs[i].value = v.title||''; });
-  if (p.image_url) {
-    const img = document.getElementById('image-preview');
-    img.src = p.image_url;
-    img.style.display = 'block';
-  }
-}
-
-async function savePin() {
-  const name = document.getElementById('f-name').value.trim();
-  const niche = document.getElementById('f-niche').value;
-  if (!name || !niche) { showToast('Please enter a name and niche ⚠️'); return; }
-
-  const variantLabels = ['Routine','Price / Value','Educational','Lifestyle','Gift Idea'];
-  const variants = Array.from(document.querySelectorAll('.variant-inp'))
-    .map((inp,i) => ({ angle: variantLabels[i], title: inp.value.trim() }))
-    .filter(v => v.title);
-
-  const pinData = {
-    name, niche,
-    price: document.getElementById('f-price').value.trim(),
-    commission: document.getElementById('f-commission').value.trim(),
-    link: document.getElementById('f-link').value.trim(),
-    status: document.getElementById('f-status').value,
-    publish_date: document.getElementById('f-date').value || null,
-    title: document.getElementById('f-title').value.trim(),
-    description: document.getElementById('f-description').value.trim(),
-    hashtags: document.getElementById('f-hashtags').value.trim(),
-    visual_tips: document.getElementById('f-visual').value.trim(),
-    notes: document.getElementById('f-notes').value.trim(),
-    impressions: parseInt(document.getElementById('f-impressions').value)||0,
-    clicks: parseInt(document.getElementById('f-clicks').value)||0,
-    saves: parseInt(document.getElementById('f-saves').value)||0,
-    conversions: parseInt(document.getElementById('f-conversions').value)||0,
-    variants,
-    updated_at: new Date().toISOString()
+async function savePin(){
+  const name=document.getElementById('f-name').value.trim();
+  const niche=document.getElementById('f-niche').value;
+  if(!name||!niche){showToast('Please enter a name and niche ⚠️');return;}
+  const variantLabels=['Routine','Price / Value','Educational','Lifestyle','Gift Idea'];
+  const variants=Array.from(document.querySelectorAll('.variant-inp')).map((inp,i)=>({angle:variantLabels[i],title:inp.value.trim()})).filter(v=>v.title);
+  const pinData={
+    name,niche,
+    price:document.getElementById('f-price').value.trim(),
+    commission:document.getElementById('f-commission').value.trim(),
+    link:document.getElementById('f-link').value.trim(),
+    status:document.getElementById('f-status').value,
+    publish_date:document.getElementById('f-date').value||null,
+    title:document.getElementById('f-title').value.trim(),
+    description:document.getElementById('f-description').value.trim(),
+    hashtags:document.getElementById('f-hashtags').value.trim(),
+    visual_tips:document.getElementById('f-visual').value.trim(),
+    notes:document.getElementById('f-notes').value.trim(),
+    impressions:parseInt(document.getElementById('f-impressions').value)||0,
+    clicks:parseInt(document.getElementById('f-clicks').value)||0,
+    saves:parseInt(document.getElementById('f-saves').value)||0,
+    conversions:parseInt(document.getElementById('f-conversions').value)||0,
+    variants,updated_at:new Date().toISOString()
   };
-
-  let savedId = editingId;
-
-  if (editingId) {
-    await db.from('pins').update(pinData).eq('id', editingId);
-  } else {
-    const { data } = await db.from('pins').insert(pinData).select().single();
-    savedId = data?.id;
-  }
-
-  if (pendingImageFile && savedId) {
-    const url = await uploadImage(pendingImageFile, savedId);
-    if (url) await db.from('pins').update({ image_url: url }).eq('id', savedId);
-  }
-
-  await loadPins();
-  closeModal();
-  renderProducts();
-  renderDashboard();
-  showToast(editingId ? 'Pin updated ✓' : 'Pin saved ✓');
+  let savedId=editingId;
+  if(editingId){await db.from('pins').update(pinData).eq('id',editingId);}
+  else{const {data}=await db.from('pins').insert(pinData).select().single();savedId=data?.id;}
+  if(pendingImageFile&&savedId){const url=await uploadImage(pendingImageFile,savedId);if(url)await db.from('pins').update({image_url:url}).eq('id',savedId);}
+  await loadPins();closeModal();renderProducts();renderDashboard();
+  showToast(editingId?'Pin updated ✓':'Pin saved ✓');
 }
 
-async function deletePin() {
-  if (!editingId || !confirm('Delete this pin?')) return;
-  await db.from('pins').delete().eq('id', editingId);
-  await loadPins();
-  closeModal();
-  renderProducts();
-  renderDashboard();
-  showToast('Pin deleted');
+async function deletePin(){
+  if(!editingId||!confirm('Delete this pin?'))return;
+  await db.from('pins').delete().eq('id',editingId);
+  await loadPins();closeModal();renderProducts();renderDashboard();showToast('Pin deleted');
 }
 
-// ── CALENDAR ──
-function renderCalendar() {
-  const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-  document.getElementById('cal-month-label').textContent = months[calMonth] + ' ' + calYear;
-  const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-  const first = new Date(calYear, calMonth, 1).getDay();
-  const total = new Date(calYear, calMonth+1, 0).getDate();
-  const today = new Date();
-  let html = days.map(d => `<div class="cal-day-header">${d}</div>`).join('');
-  for (let i = 0; i < first; i++) html += '<div class="cal-day empty"></div>';
-  for (let d = 1; d <= total; d++) {
-    const dateStr = `${calYear}-${String(calMonth+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
-    const isToday = today.getDate()===d && today.getMonth()===calMonth && today.getFullYear()===calYear;
-    const dayPins = pins.filter(p => p.publish_date === dateStr);
-    const pinsHtml = dayPins.map(p => {
-      const st = statuses.find(s => s.name === p.status);
-      return `<div class="cal-pin" style="background:${st?.color||'#F0F0F0'}" onclick="event.stopPropagation();openEdit('${p.id}')" title="${p.name}">${p.name}</div>`;
+function renderCalendar(){
+  const months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  document.getElementById('cal-month-label').textContent=months[calMonth]+' '+calYear;
+  const days=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const first=new Date(calYear,calMonth,1).getDay();
+  const total=new Date(calYear,calMonth+1,0).getDate();
+  const today=new Date();
+  let html=days.map(d=>`<div class="cal-day-header">${d}</div>`).join('');
+  for(let i=0;i<first;i++) html+='<div class="cal-day empty"></div>';
+  for(let d=1;d<=total;d++){
+    const ds=`${calYear}-${String(calMonth+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    const isToday=today.getDate()===d&&today.getMonth()===calMonth&&today.getFullYear()===calYear;
+    const dayPins=pins.filter(p=>p.publish_date===ds);
+    const pinsHtml=dayPins.map(p=>{
+      const st=statuses.find(s=>s.name===p.status);
+      return `<div class="cal-pin" style="background:${st?.color||'#F0F0F0'}" onclick="event.stopPropagation();openEdit('${p.id}')">${p.name}</div>`;
     }).join('');
-    html += `<div class="cal-day${isToday?' today':''}"><div class="cal-date">${d}</div>${pinsHtml}</div>`;
+    html+=`<div class="cal-day${isToday?' today':''}"><div class="cal-date">${d}</div>${pinsHtml}</div>`;
   }
-  document.getElementById('calendar-grid').innerHTML = html;
+  document.getElementById('calendar-grid').innerHTML=html;
 }
 
-function changeMonth(dir) {
-  calMonth += dir;
-  if (calMonth > 11) { calMonth=0; calYear++; }
-  if (calMonth < 0) { calMonth=11; calYear--; }
-  renderCalendar();
+function changeMonth(dir){calMonth+=dir;if(calMonth>11){calMonth=0;calYear++;}if(calMonth<0){calMonth=11;calYear--;}renderCalendar();}
+
+function renderNicheSettings(){
+  document.getElementById('niches-list').innerHTML=niches.map(n=>
+    `<div class="tag-item" style="background:${n.color}88"><span>${n.emoji||''} ${n.name}</span><span class="tag-delete" onclick="deleteNiche('${n.id}')">✕</span></div>`).join('');
 }
 
-// ── SETTINGS ──
-function renderNicheSettings() {
-  document.getElementById('niches-list').innerHTML = niches.map(n => `
-    <div class="tag-item" style="background:${n.color}88">
-      <span>${n.emoji||''} ${n.name}</span>
-      <span class="tag-delete" onclick="deleteNiche('${n.id}')">✕</span>
-    </div>`).join('');
+function renderStatusSettings(){
+  document.getElementById('statuses-list').innerHTML=statuses.map(s=>
+    `<div class="tag-item" style="background:${s.color}"><span>${s.name}</span><span class="tag-delete" onclick="deleteStatus('${s.id}')">✕</span></div>`).join('');
 }
 
-function renderStatusSettings() {
-  document.getElementById('statuses-list').innerHTML = statuses.map(s => `
-    <div class="tag-item" style="background:${s.color}">
-      <span>${s.name}</span>
-      <span class="tag-delete" onclick="deleteStatus('${s.id}')">✕</span>
-    </div>`).join('');
+async function addNiche(){
+  const name=document.getElementById('new-niche-name').value.trim();
+  const emoji=document.getElementById('new-niche-emoji').value.trim();
+  const color=document.getElementById('new-niche-color').value;
+  if(!name){showToast('Enter a niche name ⚠️');return;}
+  await db.from('niches').insert({name,emoji,color});
+  document.getElementById('new-niche-name').value='';
+  document.getElementById('new-niche-emoji').value='';
+  await loadNiches();populateSelects();showToast('Niche added ✓');
 }
 
-async function addNiche() {
-  const name = document.getElementById('new-niche-name').value.trim();
-  const emoji = document.getElementById('new-niche-emoji').value.trim();
-  const color = document.getElementById('new-niche-color').value;
-  if (!name) { showToast('Enter a niche name ⚠️'); return; }
-  await db.from('niches').insert({ name, emoji, color });
-  document.getElementById('new-niche-name').value = '';
-  document.getElementById('new-niche-emoji').value = '';
-  await loadNiches();
-  populateSelects();
-  showToast('Niche added ✓');
+async function deleteNiche(id){
+  if(!confirm('Delete this niche?'))return;
+  await db.from('niches').delete().eq('id',id);
+  await loadNiches();populateSelects();showToast('Niche deleted');
 }
 
-async function deleteNiche(id) {
-  if (!confirm('Delete this niche?')) return;
-  await db.from('niches').delete().eq('id', id);
-  await loadNiches();
-  populateSelects();
-  showToast('Niche deleted');
+async function addStatus(){
+  const name=document.getElementById('new-status-name').value.trim();
+  const color=document.getElementById('new-status-color').value;
+  if(!name){showToast('Enter a status name ⚠️');return;}
+  await db.from('statuses').insert({name,color});
+  document.getElementById('new-status-name').value='';
+  await loadStatuses();populateSelects();showToast('Status added ✓');
 }
 
-async function addStatus() {
-  const name = document.getElementById('new-status-name').value.trim();
-  const color = document.getElementById('new-status-color').value;
-  if (!name) { showToast('Enter a status name ⚠️'); return; }
-  await db.from('statuses').insert({ name, color });
-  document.getElementById('new-status-name').value = '';
-  await loadStatuses();
-  populateSelects();
-  showToast('Status added ✓');
+async function deleteStatus(id){
+  if(!confirm('Delete this status?'))return;
+  await db.from('statuses').delete().eq('id',id);
+  await loadStatuses();populateSelects();showToast('Status deleted');
 }
 
-async function deleteStatus(id) {
-  if (!confirm('Delete this status?')) return;
-  await db.from('statuses').delete().eq('id', id);
-  await loadStatuses();
-  populateSelects();
-  showToast('Status deleted');
+// ── GEMINI AI ──
+async function callGemini(prompt) {
+  const res = await fetch(WORKER_URL, {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({prompt})
+  });
+  const data = await res.json();
+  const text = data.text || '';
+  const clean = text.replace(/```json|```/g,'').trim();
+  try { return JSON.parse(clean); }
+  catch { return null; }
 }
 
-// ── AI GENERATOR ──
-async function runGenerator() {
-  const name = document.getElementById('gen-name').value.trim();
-  const cat = document.getElementById('gen-cat').value;
-  if (!name || !cat) { showToast('Please enter a name and category ⚠️'); return; }
-  document.getElementById('gen-btn').disabled = true;
-  document.getElementById('gen-loading').style.display = 'block';
-  document.getElementById('gen-results').style.display = 'none';
-  const data = await callAI(name, cat, document.getElementById('gen-price').value, document.getElementById('gen-benefits').value);
-  document.getElementById('gen-loading').style.display = 'none';
-  document.getElementById('gen-btn').disabled = false;
-  if (!data) { showToast('Generation failed — try again'); return; }
-  generatedData = { ...data, name, cat, price: document.getElementById('gen-price').value, link: document.getElementById('gen-link').value };
-  document.getElementById('gen-out-title').textContent = data.bestTitle;
-  document.getElementById('gen-out-desc').textContent = data.description;
-  document.getElementById('gen-out-hash').textContent = data.hashtags;
-  document.getElementById('gen-out-visual').textContent = data.visualTips;
-  document.getElementById('gen-out-variants').innerHTML = (data.variants||[]).map((v,i) =>
-    `<div class="variant-item"><div class="v-num">${i+1}</div><div><div class="v-angle">${v.angle}</div><div class="v-title">${v.title}</div></div></div>`).join('');
-  document.getElementById('gen-results').style.display = 'block';
-}
-
-async function saveGeneratedPin() {
-  if (!generatedData) return;
-  const variantLabels = ['Routine','Price / Value','Educational','Lifestyle','Gift Idea'];
-  const { data } = await db.from('pins').insert({
-    name: generatedData.name,
-    niche: generatedData.cat,
-    price: generatedData.price,
-    link: generatedData.link,
-    status: statuses[0]?.name || 'To Create',
-    title: generatedData.bestTitle,
-    description: generatedData.description,
-    hashtags: generatedData.hashtags,
-    visual_tips: generatedData.visualTips,
-    variants: (generatedData.variants||[]).map((v,i) => ({ angle: variantLabels[i]||v.angle, title: v.title })),
-    keywords: generatedData.keywords || {},
-    color_palette: generatedData.colorPalette || []
-  }).select().single();
-  await loadPins();
-  showToast('Saved to My Pins ✓');
-  document.getElementById('gen-results').style.display = 'none';
-  ['gen-name','gen-price','gen-link','gen-benefits'].forEach(id => document.getElementById(id).value = '');
-  document.getElementById('gen-cat').value = '';
-}
-
-async function quickAIFill() {
-  const name = document.getElementById('modal-ai-name').value.trim();
-  const cat = document.getElementById('modal-ai-cat').value;
-  if (!name || !cat) { showToast('Enter a name and category first ⚠️'); return; }
-  document.getElementById('modal-ai-loading').style.display = 'block';
-  const data = await callAI(name, cat, '', '');
-  document.getElementById('modal-ai-loading').style.display = 'none';
-  if (!data) { showToast('Generation failed — try again'); return; }
-  document.getElementById('f-name').value = name;
-  document.getElementById('f-niche').value = cat;
-  document.getElementById('f-title').value = data.bestTitle||'';
-  document.getElementById('f-description').value = data.description||'';
-  document.getElementById('f-hashtags').value = data.hashtags||'';
-  document.getElementById('f-visual').value = data.visualTips||'';
-  const inputs = document.querySelectorAll('.variant-inp');
-  (data.variants||[]).forEach((v,i) => { if (inputs[i]) inputs[i].value = v.title||''; });
-  showToast('Fields filled ✨');
-}
-
-async function callAI(name, category, price, benefits) {
-  const prompt = `You are a Pinterest marketing expert for "Gather & Glow" (@GatherAndGlowWithMe), an Amazon Australia affiliate account for Australian women 25-45 interested in home decor, kitchen gadgets, and beauty.
+function buildPrompt(name, category, price, benefits) {
+  return `You are a Pinterest marketing expert for "Gather & Glow" (@GatherAndGlowWithMe), an Amazon Australia affiliate account targeting Australian women 25-45 interested in home decor, kitchen gadgets, and beauty.
 
 Generate optimised Pinterest pin content for:
 - Product: ${name}
@@ -875,32 +685,73 @@ Generate optimised Pinterest pin content for:
 - Price: ${price||'not specified'}
 - Benefits: ${benefits||'not specified'}
 
-Respond ONLY with valid JSON, no preamble, no backticks:
-{"bestTitle":"SEO title max 100 chars starting with main keyword","description":"Max 500 chars. Emotional hook, 3 benefits, natural keywords, CTA + #ad #affiliatelink. No hashtags.","hashtags":"10 hashtags space-separated","variants":[{"angle":"Routine","title":"..."},{"angle":"Price/Value","title":"..."},{"angle":"Educational","title":"..."},{"angle":"Lifestyle","title":"..."},{"angle":"Gift idea","title":"..."}],"visualTips":"4-5 specific Canva tips for this exact product: photo style, props, composition, lighting, colour palette with hex codes"}`;
-  try {
-    const res = await fetch("https://api.anthropic.com/v1/messages", {
-      method:"POST",
-      headers:{"Content-Type":"application/json"},
-      body: JSON.stringify({ model:"claude-sonnet-4-20250514", max_tokens:1000, messages:[{role:"user",content:prompt}] })
-    });
-    const d = await res.json();
-    const text = d.content.map(i => i.text||'').join('').replace(/```json|```/g,'').trim();
-    return JSON.parse(text);
-  } catch(e) { console.error(e); return null; }
+Respond ONLY with valid JSON, no preamble, no markdown backticks:
+{"bestTitle":"SEO title max 100 chars starting with main keyword","description":"Max 500 chars. Emotional hook, 3 benefits, natural keywords, CTA + #ad #affiliatelink. No hashtags here.","hashtags":"10 hashtags space-separated starting with #","variants":[{"angle":"Routine","title":"..."},{"angle":"Price/Value","title":"..."},{"angle":"Educational","title":"..."},{"angle":"Lifestyle","title":"..."},{"angle":"Gift idea","title":"..."}],"visualTips":"4-5 specific Canva tips for this product: photo style, props, composition, lighting, colour palette with hex codes"}`;
 }
 
-// ── TOAST ──
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2800);
+async function runGenerator(){
+  const name=document.getElementById('gen-name').value.trim();
+  const cat=document.getElementById('gen-cat').value;
+  if(!name||!cat){showToast('Please enter a name and category ⚠️');return;}
+  document.getElementById('gen-btn').disabled=true;
+  document.getElementById('gen-loading').style.display='block';
+  document.getElementById('gen-results').style.display='none';
+  const data=await callGemini(buildPrompt(name,cat,document.getElementById('gen-price').value,document.getElementById('gen-benefits').value));
+  document.getElementById('gen-loading').style.display='none';
+  document.getElementById('gen-btn').disabled=false;
+  if(!data){showToast('Generation failed — try again ⚠️');return;}
+  generatedData={...data,name,cat,price:document.getElementById('gen-price').value,link:document.getElementById('gen-link').value};
+  document.getElementById('gen-out-title').textContent=data.bestTitle;
+  document.getElementById('gen-out-desc').textContent=data.description;
+  document.getElementById('gen-out-hash').textContent=data.hashtags;
+  document.getElementById('gen-out-visual').textContent=data.visualTips;
+  document.getElementById('gen-out-variants').innerHTML=(data.variants||[]).map((v,i)=>
+    `<div class="variant-item"><div class="v-num">${i+1}</div><div><div class="v-angle">${v.angle}</div><div class="v-title">${v.title}</div></div></div>`).join('');
+  document.getElementById('gen-results').style.display='block';
 }
 
-// ── EVENTS ──
-document.getElementById('pin-modal').addEventListener('click', e => { if (e.target === e.currentTarget) closeModal(); });
+async function saveGeneratedPin(){
+  if(!generatedData)return;
+  const variantLabels=['Routine','Price / Value','Educational','Lifestyle','Gift Idea'];
+  await db.from('pins').insert({
+    name:generatedData.name,niche:generatedData.cat,price:generatedData.price,link:generatedData.link,
+    status:statuses[0]?.name||'To Create',
+    title:generatedData.bestTitle,description:generatedData.description,
+    hashtags:generatedData.hashtags,visual_tips:generatedData.visualTips,
+    variants:(generatedData.variants||[]).map((v,i)=>({angle:variantLabels[i]||v.angle,title:v.title}))
+  });
+  await loadPins();showToast('Saved to My Pins ✓');
+  document.getElementById('gen-results').style.display='none';
+  ['gen-name','gen-price','gen-link','gen-benefits'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('gen-cat').value='';
+}
 
-// ── START ──
+async function quickAIFill(){
+  const name=document.getElementById('modal-ai-name').value.trim();
+  const cat=document.getElementById('modal-ai-cat').value;
+  if(!name||!cat){showToast('Enter a name and category first ⚠️');return;}
+  document.getElementById('modal-ai-loading').style.display='block';
+  const data=await callGemini(buildPrompt(name,cat,'',''));
+  document.getElementById('modal-ai-loading').style.display='none';
+  if(!data){showToast('Generation failed — try again');return;}
+  document.getElementById('f-name').value=name;
+  document.getElementById('f-niche').value=cat;
+  document.getElementById('f-title').value=data.bestTitle||'';
+  document.getElementById('f-description').value=data.description||'';
+  document.getElementById('f-hashtags').value=data.hashtags||'';
+  document.getElementById('f-visual').value=data.visualTips||'';
+  const inputs=document.querySelectorAll('.variant-inp');
+  (data.variants||[]).forEach((v,i)=>{if(inputs[i])inputs[i].value=v.title||'';});
+  showToast('Fields filled ✨');
+}
+
+function showToast(msg){
+  const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2800);
+}
+
+document.getElementById('pin-modal').addEventListener('click',e=>{if(e.target===e.currentTarget)closeModal();});
+
 init();
 </script>
 </body>
